@@ -1,0 +1,36 @@
+import React, {useState} from 'react'
+import { AddCategory } from './components/AddCategory';
+import { GifGrid } from './components/GifGrid';
+
+export const GifExpertApp = () => {
+    
+    //const categories = ['Assassins Creed', 'Dragon Ball', 'God of War']
+     const [categories, setCategories] =  useState(['Assassins Creed']);
+    
+    //  const handleAdd = () =>{
+    //      setCategories([...categories,'hunterxhunter']);
+    //  }
+
+    return (
+        <>
+            <h2>GIFEXPERT APP </h2>
+
+            <AddCategory setCategories={setCategories}/>
+
+            <hr/>   
+            <ol>
+                {
+                    categories.map(category=>(
+                    <GifGrid 
+                    key ={category}
+                    category={category}
+                    />)
+                    
+                    )
+                }
+            </ol>
+        </>
+    )
+}
+
+
